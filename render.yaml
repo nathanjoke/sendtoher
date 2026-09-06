@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: sendtoher-signaling
+    runtime: node
+    buildCommand: npm ci && npm run build:signaling
+    startCommand: npm run start:signaling
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
